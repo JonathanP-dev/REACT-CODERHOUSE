@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicExample({initialCompras, setTotalCompras, title, text, price}) {
+function BasicExample({initialCompras, setTotalCompras, title, text, price, image}) {
 
   const handleClickSuma = () => {
     setTotalCompras(initialCompras + 1)
@@ -18,7 +18,7 @@ function BasicExample({initialCompras, setTotalCompras, title, text, price}) {
 
   return (
     <Card className='cardStyle' style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="./jona.JPG" />
+      <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{`${title} - $${price}`}</Card.Title>
         <Card.Text>

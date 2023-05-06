@@ -4,7 +4,7 @@ export function ItemListContainer ({totalCompras, setTotalCompras}) {
   return (
     <div className='main-container'>
       {CARDITEMS.map((item) => {
-        return <Card key={item.title} title={item.title} text={item.text} price={item.price} initialCompras={totalCompras} setTotalCompras={setTotalCompras}/>
+        return <Card key={item.title} image={item.image} title={item.title} text={item.text} price={item.price} initialCompras={totalCompras} setTotalCompras={setTotalCompras}/>
       })}
     </div>
   );
