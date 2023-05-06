@@ -27,17 +27,34 @@
   justify-content: center;
 }
 
-main {
-  width: 100%;
-  text-align: center;
-}
-
-
 .main-container {
-  width: 100%;
+  text-align: center;
+  width: 85%;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 3rem;
+}
+
+.aside {
+  width: 15%;
+  border-right: 1px solid black;
+  min-width: 250px;
+}
+
+.filters {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.filters div {
+  display: flex;
+  gap: 1rem;
+}
+
+.principalContainer {
+  width: 100%;
+  display: flex;
+  padding: 2rem;
 }

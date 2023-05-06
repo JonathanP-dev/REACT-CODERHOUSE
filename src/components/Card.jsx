@@ -1,19 +1,27 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useContext, useState } from 'react';
+import { CartContext } from '../contexts/Cart';
 
-function BasicExample({initialCompras, setTotalCompras, title, text, price, image}) {
 
+function BasicExample({title, text, price, image}) {
+  const {totalCompras, setTotalCompras} = useContext(CartContext)
+  const [compras, setCompras] = useState(0)
+  let initialComprasTotal = totalCompras
+  let initialCompras = compras
   const handleClickSuma = () => {
-    setTotalCompras(initialCompras + 1)
+    setTotalCompras(initialComprasTotal += 1)
+    setCompras(initialCompras += 1)
   }
 
   const handleClickResta = () => {
-    if(initialCompras <= 0){
+    if(initialComprasTotal <= 0){
       // disabled.classList.toggle('disabled')
       // console.log(disabled)
       return alert('Las compras no pueden ser menores a 0')
     }
-    setTotalCompras(initialCompras - 1)
+    setTotalCompras(initialComprasTotal -= 1)
+    setCompras(initialCompras -= 1)
   }
 
   return (
@@ -26,8 +34,13 @@ function BasicExample({initialCompras, setTotalCompras, title, text, price, imag
         </Card.Text>
         <div className='button-container'>
           <Button onClick={handleClickSuma} className='boton' variant="primary">+</Button>
-          <Button type='button' name='disabled' onClick={handleClickResta} className='boton' variant="primary">-</Button>
+          {compras <= 0 ? 
+          <Button type='button' disabled onClick={handleClickResta} className='boton' variant="primary">-</Button>
+          :
+          <Button type='button' onClick={handleClickResta} className='boton' variant="primary">-</Button>
+          }
         </div>
+          {`Cantidad: ${compras}`}
       </Card.Body>
     </Card>
   );
