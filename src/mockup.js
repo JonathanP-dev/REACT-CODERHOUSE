@@ -43,8 +43,8 @@ export const CARDITEMS = [
   }
 ]
 
-export const NAVITEMS = ['HOME', 'ABOUT US', 'CONTACT']
+export const NAVITEMS = ['HOME', 'ABOUTUS', 'CONTACT']
 
-export const NAVDROPDOWNITEMS = [
+export const CATEGORIES = [
   'All', 'Front-end', 'Back-end'
 ]
