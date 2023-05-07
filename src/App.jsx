@@ -1,15 +1,15 @@
 
 import './App.css';
-import Navigation from './components/Navbar';
 import { ItemListContainer } from './components/ItemListContainer';
 import { Aside } from './components/Aside';
+import { Header } from './components/Header';
 
 
 function App({greeting}) {
 
   return (
     <>
-      <Navigation/>
+      <Header/>
       <div className='principalContainer'>
         <Aside />
         <ItemListContainer/>

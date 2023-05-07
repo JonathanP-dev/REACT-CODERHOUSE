@@ -22,9 +22,8 @@
 }
 
 .compras-container {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .main-container {
@@ -57,4 +56,63 @@
   width: 100%;
   display: flex;
   padding: 2rem;
+}
+
+.header-container {
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.header-container div {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.header-container .search {
+  width: 100%;
+}
+
+.header-container button {
+  width: 20%;
+}
+
+.header-container .filters-cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .principalContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  .aside {
+    width: 100%;
+    border: none;
+  }
+
+  .filters {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .me-auto {
+    flex-direction: row;
+  }
 }
